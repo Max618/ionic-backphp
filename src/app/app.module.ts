@@ -1,16 +1,27 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { RestaurantesPage } from '../pages/restaurantes/restaurantes';
+import { PedidosPage } from '../pages/pedidos/pedidos';
+import { MinhaContaPage } from '../pages/minha-conta/minha-conta';
+import { RedesSociaisPage } from '../pages/redes-sociais/redes-sociais';
+import { LoginPage } from '../pages/login/login';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    RestaurantesPage,
+    PedidosPage,
+    MinhaContaPage,
+    RedesSociaisPage,
+    LoginPage,
+    CadastroPage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +30,12 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    RestaurantesPage,
+    PedidosPage,
+    MinhaContaPage,
+    RedesSociaisPage,
+    LoginPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,

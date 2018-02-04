@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { PedidosPage } from '../pages/pedidos/pedidos';
+import { MinhaContaPage } from '../pages/minha-conta/minha-conta';
+import { RedesSociaisPage } from '../pages/redes-sociais/redes-sociais';
+
+
+import { RestaurantesPage } from '../pages/restaurantes/restaurantes';
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  @ViewChild(Nav) navCtrl: Nav;
+    rootPage:any = RestaurantesPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,5 +27,17 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+  goToRestaurantes(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(RestaurantesPage);
+  }goToPedidos(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(PedidosPage);
+  }goToMinhaConta(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(MinhaContaPage);
+  }goToRedesSociais(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(RedesSociaisPage);
+  }
 }
-
