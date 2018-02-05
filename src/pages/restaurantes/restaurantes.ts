@@ -18,7 +18,9 @@ export class RestaurantesPage {
     private _http: Http,
     private _loadingCtrl: LoadingController,
     private _alertCtrl: AlertController
-  ) {}
+  ) {
+    this.loader = this._loadingCtrl;
+  }
   
   ngOnInit(){
     this.createLoader();
@@ -26,7 +28,7 @@ export class RestaurantesPage {
   }
 
   private createLoader() {
-    this.loader = this._loadingCtrl.create({
+    this.loader.create({
       content: 'Listando restaurantes. Aguarde...'
     });
     this.loader.present();
